@@ -1,0 +1,1 @@
+console.log(sub(3, 4))//! não funciona
