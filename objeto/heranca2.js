@@ -48,7 +48,7 @@ const volvo = {
 Object.setPrototypeOf(ferrari, carro)
 Object.setPrototypeOf(volvo, carro)
 
-console.log(ferrari)
+console.log(ferrari) 
 console.log(volvo)
 
 volvo.acelerarMais(100)
