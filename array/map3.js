@@ -1,4 +1,4 @@
-//? simulando um map()
+//? funcionamento interno de um map()
 Array.prototype.map2 = function (callback) {
     const newArray = []
     for (let i = 0; i < this.length; i++){
