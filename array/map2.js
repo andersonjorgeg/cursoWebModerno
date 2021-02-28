@@ -1,8 +1,8 @@
 const carrinho = [
-    '{ "Nome": "Borracha", "preco": 3.45 }',
-    '{ "Nome": "Caderno", "preco": 13.90 }',
-    '{ "Nome": "Kit de lapis", "preco": 41.22 }',
-    '{ "Nome": "Caneta", "preco": 7.50 }'
+    '{ "nome": "Borracha", "preco": 3.45 }',
+    '{ "nome": "Caderno", "preco": 13.90 }',
+    '{ "nome": "Kit de lapis", "preco": 41.22 }',
+    '{ "nome": "Caneta", "preco": 7.50 }'
 ]
 
 //retornar um array apenas com os preços dos produtos
@@ -14,6 +14,6 @@ console.log(resultado)
 
 //retornar um array apenas com os nomes dos produtos
 const paraObjetoNomes = json => JSON.parse(json)
-const nomesProdutos = nomes => nomes.Nome
+const nomesProdutos = nomes => nomes.nome
 
 console.log(carrinho.map(paraObjetoNomes).map(nomesProdutos))
