@@ -1,1 +1,1 @@
-.reduce(acumulado)
+b
