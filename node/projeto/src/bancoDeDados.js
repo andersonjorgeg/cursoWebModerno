@@ -12,11 +12,17 @@ function salvarProduto(produto) {
 }
 
 function getProduto(id) {
-    return produto[id] || {}
+    return produtos[id] || {}
 }
 
 function getProdutos() {
     return Object.values(produtos)
 }
 
-module.exports = { salvarProduto, getProduto, getProdutos }
+function excluirProduto(id) {
+    const produto = produtos[id]
+    delete produtos[id]
+    return produto
+}
+
+module.exports = { salvarProduto, getProduto, getProdutos, excluirProduto }//? exportando as funções para outros módulos
