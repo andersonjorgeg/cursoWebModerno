@@ -1,9 +1,6 @@
-let p3 = new Promise(function (resolve) {
-    resolve(['Ana', 'Bia', 'Carlos', 'Daniel'])
-})
+const numeros = [min = 3, max = 4]
 
-p3.then(function(valor) {
-    for (let nome of valor) {
-        console.log(nome)
-    }
-})
+const [min, max] = [max, min]
+
+console.log(min)
+console.log(max)
