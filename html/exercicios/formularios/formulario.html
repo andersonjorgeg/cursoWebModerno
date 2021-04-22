@@ -1,0 +1,74 @@
+<h1>Formulário</h1>
+
+<form action="http://localhost:3003/usuarios" method="POST">
+
+    <h2>
+        entrada de formulário type="text" com a <span class="vermelho">TAG &lt;input&gt;</span>
+    </h2>
+    nome:
+    <input type="text" name="name">
+    <hr>
+    <h2>
+        entrada de formulário type="password" com a <span class="vermelho">TAG &lt;input&gt;</span>
+    </h2>
+    Senha: 
+    <input type="password" name="senha">
+    <hr>
+    <h2>
+        entrada de formulário com a <span class="vermelho">TAG &lt;textarea&gt;</span>
+    </h2>
+    <textarea name="bio" cols="30" rows="10"></textarea>
+    <hr>
+    <h2>
+        entrada de formulário type="radio" com a <span class="vermelho">TAG &lt;input&gt;</span>
+    </h2>
+    <div>
+        <input type="radio" name="tipo" value="admin"> Admin
+        <input type="radio" name="tipo" value="regular"> Regular
+        <input type="radio" name="tipo" value="professor"> Professor
+    </div>
+    <hr>
+    <h2>
+        entrada de formulário type="checkbox" com a <span class="vermelho">TAG &lt;input&gt;</span>
+    </h2>
+    <div>
+        <input type="checkbox" name="ativo"> Ativo
+    </div>
+    <hr>
+    <h2>
+        entrada de formulário com a <span class="vermelho">TAG &lt;select&gt; + &lt;option&gt; </span>
+    </h2>
+    <select name="estado">
+        <option value="">Selecione</option>
+        <option value="ac">Acre</option>
+        <option value="ba">Bahia</option>
+        <option value="ce">Ceará</option>
+    </select>
+    <hr>
+    <select name="interesses" multiple size="7">
+        <option value="js">Javascript</option>
+        <option value="java">Java</option>
+        <option value="php">PHP</option>
+        <option value="python">Python</option>
+        <option value="go">Go</option>
+        <option value="c">C</option>
+    </select>
+    <button>incluir</button>
+
+</form>
+
+<style>
+
+    input, 
+    textarea, 
+    select {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type=radio],
+    input[type="checkbox"] {
+        display: inline;
+    }
+
+</style>
