@@ -1,6 +1,8 @@
 <h1>Formulário</h1>
 
-<form action="http://localhost:3003/usuarios" method="POST">
+<form method="POST">
+
+    <input type="hidden" name="id" value="3"><!--? input escondido -->
 
     <h2>
         entrada de formulário type="text" com a <span class="vermelho">TAG &lt;input&gt;</span>
@@ -53,7 +55,9 @@
         <option value="go">Go</option>
         <option value="c">C</option>
     </select>
-    <button>incluir</button>
+
+    <button formaction="http://localhost:3003/usuarios">Incluir</button>
+    <button formaction="http://localhost:3003/usuarios/3">Alterar</button>
 
 </form>
 
