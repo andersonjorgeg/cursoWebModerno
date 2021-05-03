@@ -4,13 +4,13 @@ Repositório das aulas do curso de web moderno
 
 ### matérias 
 
-- **javascript** 
-- HTML
+- <img src="img/marca-de-verificacao.png" height="10" width="10"> **javascript** 
+- <img src="img/marca-de-verificacao.png" height="10" width="10"> **HTML**
+- **CSS** 
 - Angular
 - React
 - Vue
 - Node
-- CSS
 - jQuery
 - Bootstrap
 - Webpack
