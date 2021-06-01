@@ -9,6 +9,16 @@
             height: 100px;
             width: 260px;
             border: solid 3px;
+
+            /* A overflow propriedade especifica se deve cortar o conteúdo ou adicionar barras de rolagem quando o conteúdo de um elemento é muito grande para caber na área especificada. */
+            /* visible- Padrão. O estouro não é cortado. O conteúdo é renderizado fora da caixa do elemento
+            hidden - O estouro é cortado e o resto do conteúdo ficará invisível
+            scroll - O estouro é cortado e uma barra de rolagem é adicionada para ver o resto do conteúdo
+            auto- Semelhante scroll, mas adiciona barras de rolagem apenas quando necessário */
+            overflow: hidden;
+            /* overflow: scroll; */
+            /* As propriedades overflow-xe overflow-y especificam se o excesso de conteúdo deve ser alterado apenas horizontalmente ou verticalmente (ou ambos): */
+            overflow-x: scroll;
         }
     </style>
 </head>
