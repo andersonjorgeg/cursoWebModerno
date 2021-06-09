@@ -5,7 +5,32 @@
     <meta charset="UTF-8">
     <title>Unidades #01</title>
     <style>
-        /* ... */
+        .unidades-absolutas {
+            /* os atributos top e left só é considerado por causa position: absolute */
+            position: absolute; 
+            font-size: 40px;
+            padding: 20px;
+            border: solid 5px #222;
+            margin: 30px;
+            width: 4cm; /* pouco usado */
+            height: 20mm; /* pouco usado */
+            top: 150px;
+            left: 200px;
+        }
+
+        .unidades-relativas {
+            position: absolute;
+            /* em - Em relação ao tamanho da fonte do elemento (4em significa 4 vezes o tamanho da fonte atual) */
+            font-size: 4em;
+            padding: 5%;
+            border: solid 1vw #222;
+            margin: .8%;
+            width: 20vw;
+            height: 15vh;
+            bottom: 5%;
+            right: 5%;
+
+        }
     </style>
 </head>
 
