@@ -12,6 +12,21 @@
             border: solid 5px;
             display: none;
         }
+
+        @media (max-width: 600px) {
+            .muito-pequeno {display: block;}
+        }
+
+        /* orientação portrait - retrato ou landscape - paisagem*/
+        /* no caso abaixo a virgula está funcionando com OR. ou seja faça se (max-width: 1000px) || (orientation: portrait) */
+        @media (max-width: 1000px), (orientation: portrait) {
+            .pequeno-retrato {display: block;}
+        }
+
+        /* definindo intervalo */
+        @media (min-width: 550px) and (max-width: 1000px) {
+            .intervalo {display: block;}
+        }
     </style>
 </head>
 <body>
