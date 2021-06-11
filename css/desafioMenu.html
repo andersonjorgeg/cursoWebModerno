@@ -7,7 +7,103 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        /* ... */
+        /* configuração global */
+        * {
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+            background-color: lightgray;
+        }
+
+        .cabecalho {
+            background-color: #333;
+            border-bottom: solid 5px #4faddb;
+            height: 80px;
+            box-sizing: content-box;
+        }
+
+        .logo {
+            display: inline-block;
+            height: 80px;
+            padding: 15px;
+        }
+        .logo img {
+            /* a imagem vai ocupar 100% do tamanho do elemento pai que no caso é a logo */
+            height: 100%;
+        }
+
+        .menu-toggle {
+            float: right;
+            color: #eee;
+            background-color: #555;
+            border: solid 1px #777;
+            border-radius: 5px;
+            height: 40px;
+            padding: 10px 20px;
+            margin: 20px 15px;
+            display: none;
+        }
+
+        .menu {
+            display: inline-block;
+            vertical-align: top;
+            height: 80px;
+            padding: 25px;
+        }
+        .menu ul {
+            margin: 0px;
+            padding: 0px;
+        }
+        .menu li {
+            display: inline-block;
+        }
+        .cabecalho a {
+            text-decoration: none;
+            color: #eee;
+            font-size: 1.3em;
+        }
+        .menu a {
+            padding: 15px;
+        }
+
+        .autenticacao {
+            float: right;
+            height: 80px;
+            padding: 25px; 
+        }
+        
+        .menu a:hover,
+        .menu a.selected{
+            background-color: #4faddb;
+            color: #000;
+        }
+
+        .botao {
+            border-radius: 30px;
+            padding: 10px 25px;
+            margin: 10px;
+            
+        }
+        .destaque {
+            background-color: #f50a31;
+        }
+
+        @media (max-width: 910px){
+            .autenticacao{
+                display: none;
+            } 
+        }
+        @media (max-width: 675px) {
+            .menu-toggle{
+                display: block;
+            }
+            .menu {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -44,7 +140,22 @@
     </header>
 
     <script>
-        // ...
+        /* onhashchange - O evento onhashchange ocorre quando há mudanças na parte da âncora (começa com o símbolo '#') da URL atual. */
+        window.onhashchange = function(evento){
+            /* pegando a url */
+            const oldURL = evento.oldURL.split('#')[1] 
+            const newURL = evento.newURL.split('#')[1]
+            /* console.log(`URL antiga ${oldURL} - URL nova ${newURL}`) */
+
+            /* Document.querySelector() - Retorna o primeiro elemento dentro do documento (usando ordenação em profundidade, pré-ordenada e transversal dos nós do documento) que corresponde ao grupo especificado de seletores. */
+            const oldLink = document.querySelector(`.menu a[href='#${oldURL}']`)
+            const newLink = document.querySelector(`.menu a[href='#${newURL}']`)
+
+            /* remover a class selected do menu que saiu */
+            oldLink && oldLink.classList.remove('selected')
+            /* adicionando a class selected do menu que entrou  */
+            newLink && newLink.classList.add('selected')
+        }
     </script>
 </body>
 
