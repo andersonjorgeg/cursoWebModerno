@@ -7,10 +7,42 @@
 </head>
 <body class="conteudo exercicio">
     <div id="primeiro">#primeiro</div>
-    <div>Segundo</div>
+    <div wb-attrib>Segundo</div>
     <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
-    <script>              
-        // ...
+    <script>         
+
+        /** NodeList objetos são coleções de nós , geralmente retornados por propriedades como Node.childNodes métodos como document.querySelectorAll(). */
+    
+        
+        /** seleciona um elemento através do id - nesse caso é obrigatório o uso # */
+        document.querySelector('#primeiro').classList.add('destaque')
+
+        /* selecionar elementos */
+        const selecionar = seletor => 
+            document.querySelectorAll(seletor).forEach(elemento => elemento.classList.add('destaque'))
+
+        /* desselecionar elementos */
+        const desselecionar = seletor =>
+            document.querySelectorAll(seletor).forEach(elemento => elemento.classList.remove('destaque'))
+
+        selecionar('div')
+
+        desselecionar('*')
+        selecionar('.terceiro.ultimo')
+
+        desselecionar('*')
+        selecionar(':not(#primeiro)')
+
+        desselecionar('*')
+        selecionar(':nth-child(1)')
+
+        desselecionar('*')
+        /* vai pegar o primeiro elemento do tipo */
+        selecionar('div:nth-of-type(1)')
+        
+        desselecionar('*')
+        /* selecionar a partir de um atributo */
+        selecionar('[wb-attrib]')
     </script>
 </body>
 </html>
