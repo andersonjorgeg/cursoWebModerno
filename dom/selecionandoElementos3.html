@@ -31,7 +31,24 @@
         <button>Pesquisar</button>
     </form>
     <script>
-        // ...
+        /* selecionando formularios */
+        console.log(document.forms) /* retorna um HTMLCollection */
+        console.log(document.forms[0])
+
+        /* selecionando elementos através do nome */
+        console.log(document.getElementsByName('pesquisa')) /* retorna um NodeList */
+        /* console.log(document.getElementsByTagName('form')) */ /* retorna um HTMLCollection */
+
+        console.log(document.pesquisa)/* retorna o elemento que tem o nome pesquisa */
+
+        console.log(document.pesquisa.q)
+
+        /* alterando valor do formulario */
+        document.pesquisa.q.value = 'Linux Brasil'
+        document.pesquisa.hl.value = 'en-us' 
+
+        /* ver qual indice esta selecionado na tag <select></select> */
+        console.log(document.pesquisa.hl.selectedIndex)
     </script>
 </body>
 
