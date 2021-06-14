@@ -12,7 +12,38 @@
         Classes
     </div>
     <script>
-        // ...
+        /* selecionando as classes do elemento */
+        const div = document.querySelector('div')
+        const classes = div.classList
+        
+        /* adicionando classes ao elemento */
+        classes.add('destaque')
+
+        /* removendo classes do elemento */
+        classes.remove('destaque')
+
+        /* alternado se tiver class vai remover se não vai adicionar  */
+        classes.toggle('destaque')
+        
+        /* verificar se a class está contida no elemento */
+        console.log(classes.contains('destaque'))
+
+        /* saber a quantidades de class um elemento tem */
+        console.log(classes.length)
+
+        classes.toggle('destaque')
+        console.log(classes.length)
+
+        /* exemplo */
+        classes.add('destaque1')
+        classes.add('destaque2')
+        console.log(classes.length)
+
+        for(let classe of classes) {
+            console.log(classe)
+        }
+
+        classes.forEach(classe => console.log(classe))
     </script>
 </body>
 
