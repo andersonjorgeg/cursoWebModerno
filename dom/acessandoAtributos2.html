@@ -17,7 +17,39 @@
         </ul>
     </div>
     <script>
-        // ...
+        const lista = document.querySelector('div ul[destino="escritório"]')
+        console.log('Elemento "ul"...................')
+        console.log('childNodes', lista.childNodes)
+        console.log('destino', lista.destino)
+        console.log('getAttribute', lista.getAttribute('destino'))
+
+        /* vai perguntar se o atributo existe */
+        console.log('hasAttribute', lista.hasAttribute('destino'))
+
+        /* vai trocar o valor do atributo */
+        lista.setAttribute('destino', 'empresa')
+        /* também pode adicionar atributos no elemento */
+        lista.setAttribute('status', 'aberto')
+
+        /* remove atributo */
+        lista.removeAttribute('destino')
+
+        /* diferença na declaração de atributos destino / data-urgencia */
+        console.log(lista.dataset.urgencia)
+
+        /* alterando o valor do atributo */
+        lista.dataset.urgencia = 4
+
+        /* acessando o valor do atributo usando o getAttribute() */
+        console.log(lista.getAttribute('data-urgencia'))
+
+
+        //CUIDADO
+        const label = document.querySelector('label')
+        console.log(label.for)//ERRADO
+        console.log(label.htmlFor)//CERTO
+        console.log(label.getAttribute('for'))//CERTO
+
     </script>
 </body>
 
