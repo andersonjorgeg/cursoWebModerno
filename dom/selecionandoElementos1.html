@@ -9,8 +9,27 @@
     <div id="primeiro">#primeiro</div>
     <div>Segundo</div>
     <div class="terceiro ultimo">.terceiro .ultimo</div>
-    <script>              
-        // ...
+    <script>
+        /**site para explicar HTMLCollection - https://www.w3schools.com/jsref/dom_obj_htmlcollection.asp */
+
+        /** selecionando elementos através do id */
+        document.getElementById('primeiro').classList.add('destaque')
+        
+        /** selecionando elementos através das tags */
+        const divs = document.getElementsByTagName('div')
+        /* Array.from(divs) transforma o HTMLCollection em um array */
+        Array.from(divs).forEach(e => e.classList.remove('destaque'))
+
+        /* outra forma de transformar um HTMLCollection em array */
+        const divsArray = [...divs]
+        /* aplicando a classe destaque */
+        divsArray.forEach(elemento => elemento.classList.add('destaque'))
+
+        /** selecionando elementos através das class */
+        const ultimosElementos = document.getElementsByClassName('ultimo')
+        for(let elemento of ultimosElementos) {
+            elemento.classList.remove('destaque')
+        }
     </script>
 </body>
 </html>
