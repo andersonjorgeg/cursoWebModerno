@@ -9,7 +9,54 @@
 
 <body class='conteudo exercicio'>
     <script>
-        // ...
+        /* selecionando o elemento */
+        const body = document.querySelector('body')
+        
+        /* criando novos elementos html com javascript */
+        const div1 = document.createElement('div')
+
+        /* adicionando um classe ao elemento */
+        div1.classList.add('destaque')
+
+        /* definindo o conteudo do elemento */
+        div1.innerHTML = 'Primeiro'
+
+        /* criando novos elementos html com javascript */
+        const div2 = document.createElement('div')
+
+        /* adicionando um atributo e valor ao elemento */
+        div2.setAttribute('wm-atributo', 'valor')
+
+        /* definindo o conteudo do elemento */
+        div2.innerHTML = 'Segundo'
+
+        const p = document.createElement('p')
+        p.innerHTML = 'Terceiro'
+        const div3 = document.createElement('div')
+        
+        /* colocando elemento html dentro de outro elemento html */
+        /* com a função appendChild() o elemento vai ser inserido na ultima posição */
+        div3.appendChild(p)
+        
+        body.appendChild(div1)
+        body.appendChild(div2)
+        body.appendChild(div3)
+
+        /* método insertBefore() inserindo antes*/
+        const texto = document.createTextNode('Antes...')/* criando texto */
+        div3.insertBefore(texto, div3.childNodes[0])
+
+        /* criando um clone */
+        /* clonando com os filhos */
+        const div4 = div3.cloneNode(true)
+        body.appendChild(div4)
+        
+        /* clonando sem os filhos */
+        const div5 = div3.cloneNode(false)
+        body.appendChild(div5 )
+
+        /* removendo elemento html */
+        body.removeChild(div5)
     </script>
 </body>
 
