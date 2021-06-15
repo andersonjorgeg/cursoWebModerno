@@ -12,7 +12,43 @@
         <p>Texto Inicial</p>
     </div>
     <script>
-        // ...
+        
+
+        /* selecionando elemento HTML */
+        const div = document.querySelector('div')
+
+        /* A propriedade innerHTML define ou retorna o conteúdo HTML (HTML interno) de um elemento.
+        * link - https://www.w3schools.com/jsref/prop_html_innerhtml.asp
+        */
+
+        /* substituindo o valor interno do elemento HTML */
+        div.innerHTML = 'Texto Alterado'
+
+        /* substituindo o elemento por um texto */
+        //div.outerHTML = 'Texto Alterado'
+
+        /* O método insertAdjacentHTML() insere um texto como HTML, em uma posição especificada.
+        Os valores da posição legal são:
+
+        "afterbegin" "afterend" "beforebegin" "beforeend" */
+
+        /* insere elemento antes do início da tag */
+        div.insertAdjacentHTML('beforebegin', '<p>Antes do Início da TAG</p>')
+
+        /* insere elemento depois do início da tag */
+        div.insertAdjacentHTML('afterbegin', '<p>Depois do Início da TAG</p>')
+
+        /* insere elemento antes do fim tag */
+        div.insertAdjacentHTML('beforeend', '<p>Antes do Fim da TAG</p>')
+
+        /* insere elemento depois do fim da tag */
+        div.insertAdjacentHTML('afterend', '<p>Depois do Fim da TAG')
+
+        /* retorna somente texto (sem tags) */
+        console.log(div.innerText)
+
+        /* retorna textos e as tags */
+        console.log(div.innerHTML)
     </script>
 </body>
 
