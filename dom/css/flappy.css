@@ -68,4 +68,5 @@
     right: 10px;
     font-family: pixel;
     font-size: 70px;
+    z-index: 1;
 }
