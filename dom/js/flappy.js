@@ -168,7 +168,35 @@ function Progresso() {
     this.atualizarPontos(0)
 }
 
+/* colisão */
+function estaoSobrepostos(elementoA, elementoB) {
+    /* O método Element.getBoundingClientRect() retorna o tamanho de um elemento e sua posição relativa ao viewport. */
+    const a = elementoA.getBoundingClientRect()
+    const b = elementoB.getBoundingClientRect()
 
+    /* verificando se tem sobreposição horizontal */
+    const horizontal = a.left + a.width >= b.left
+        && b.left + b.width >= a.left
+
+    /* verificando se tem sobreposição vertical */
+    const vertical = a.top + a.height >= b.top
+        && b.top + b.height >= a.top
+
+    return horizontal && vertical
+}
+
+function colidiu(passaro, barreiras) {
+    let colidiu = false
+    barreiras.pares.forEach(parDeBarreiras => {
+        if(!colidiu) {
+            const superior = parDeBarreiras.superior.elemento
+            const inferior = parDeBarreiras.inferior.elemento
+            colidiu = estaoSobrepostos(passaro.elemento, superior)
+                || estaoSobrepostos(passaro.elemento, inferior)
+        }
+    })
+    return colidiu
+}
 
 function FlappyBird() {
     let pontos = 0
@@ -186,7 +214,7 @@ function FlappyBird() {
     const progresso = new Progresso()
 
     /* criando as barreiras e atualizando os pontos */
-    const barreiras = new Barreiras(altura, largura, 200, 400,
+    const barreiras = new Barreiras(altura, largura, 250, 400,
         () => progresso.atualizarPontos(++pontos))
 
     /* criando o passaro */
@@ -207,6 +235,10 @@ function FlappyBird() {
         const temporizador = setInterval(() => {
             barreiras.animar()
             passaro.animar()
+
+            if (colidiu(passaro, barreiras)) {
+                clearInterval(temporizador)
+            }
         }, 20)
     }
 }
