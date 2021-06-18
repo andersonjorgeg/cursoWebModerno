@@ -174,13 +174,24 @@ function estaoSobrepostos(elementoA, elementoB) {
     const a = elementoA.getBoundingClientRect()
     const b = elementoB.getBoundingClientRect()
 
+    const ladoDireitoElementoA = a.left + a.width
+    const ladoEsquerdoElementoB = b.left
+    const ladoDireitoElementoB = b.left + b.width
+    const ladoEsquerdoElementoA = a.left
+
     /* verificando se tem sobreposição horizontal */
-    const horizontal = a.left + a.width >= b.left
-        && b.left + b.width >= a.left
+    const horizontal = ladoDireitoElementoA >= ladoEsquerdoElementoB
+        && ladoDireitoElementoB >= ladoEsquerdoElementoA
 
     /* verificando se tem sobreposição vertical */
-    const vertical = a.top + a.height >= b.top
-        && b.top + b.height >= a.top
+
+    const parteBaixoA = a.top + a.height
+    const parteCimaB = b.top
+    const parteBaixoB = b.top + b.height
+    const parteCimaA = a.top
+
+    const vertical = parteBaixoA >= parteCimaB
+        && parteBaixoB >= parteCimaA
 
     return horizontal && vertical
 }
