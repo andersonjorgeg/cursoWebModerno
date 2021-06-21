@@ -37,5 +37,12 @@ app.post('/upload', (req, res) => {
     })
 })
 
+app.post('/formulario', (req, res) => {
+    res.send({
+        ...req.body,
+        id: 7
+    })
+})
+
 /* iníciando o servidor */
 app.listen(8080, () => console.log('Executando...'))
