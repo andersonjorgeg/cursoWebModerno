@@ -8,14 +8,14 @@ Repositório das aulas do curso de web moderno
 - <img src="img/marca-de-verificacao.png" height="10" width="10"> **HTML**
 - <img src="img/marca-de-verificacao.png" height="10" width="10"> **CSS** 
 - <img src="img/marca-de-verificacao.png" height="10" width="10"> **Ajax**
-- **Gulp**
+- <img src="img/marca-de-verificacao.png" height="10" width="10"> **Gulp**
+- **Webpack**
 - Angular
 - React
 - Vue
 - Node
 - jQuery
 - Bootstrap
-- Webpack
 - MySQL
 
 <h2 style="color:blue;">Professor do curso:</h2>
