@@ -86,6 +86,28 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/modulos/modulaA.js":
+/*!********************************!*\
+  !*** ./src/modulos/modulaA.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const moduloB = __webpack_require__(/*! ./moduloB */ \"./src/modulos/moduloB.js\")\r\n\r\nconsole.log(moduloB.saudacao())\n\n//# sourceURL=webpack:///./src/modulos/modulaA.js?");
+
+/***/ }),
+
+/***/ "./src/modulos/moduloB.js":
+/*!********************************!*\
+  !*** ./src/modulos/moduloB.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = {\r\n    saudacao() { return 'Olá eu sou o modulo B!!!' }\r\n}\n\n//# sourceURL=webpack:///./src/modulos/moduloB.js?");
+
+/***/ }),
+
 /***/ "./src/pessoa.js":
 /*!***********************!*\
   !*** ./src/pessoa.js ***!
@@ -106,7 +128,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pessoa__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pessoa */ \"./src/pessoa.js\");\n\r\n\r\nconst atendente = new _pessoa__WEBPACK_IMPORTED_MODULE_0__[\"default\"] \r\nconsole.log(atendente.cumprimentar())\n\n//# sourceURL=webpack:///./src/principal.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pessoa__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pessoa */ \"./src/pessoa.js\");\n/* harmony import */ var _modulos_modulaA__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modulos/modulaA */ \"./src/modulos/modulaA.js\");\n/* harmony import */ var _modulos_modulaA__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modulos_modulaA__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n\r\nconst atendente = new _pessoa__WEBPACK_IMPORTED_MODULE_0__[\"default\"] \r\nconsole.log(atendente.cumprimentar())\n\n//# sourceURL=webpack:///./src/principal.js?");
 
 /***/ })
 
